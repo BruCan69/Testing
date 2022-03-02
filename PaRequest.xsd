@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:include schemaLocation="SchemaLibrary.xsd"/>
+	<xs:element name="PARequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="txt30" name="Item" maxOccurs="50" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute type="txt30" name="CustomerNo" use="required">
+				<xs:annotation>
+					<xs:documentation>Customer No (at vendor), as supplied by vendor</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute type="txt30" name="AuthCode" use="required">
+				<xs:annotation>
+					<xs:documentation>Authentication/Password, as supplied by vendor</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute type="txt2" name="CId" use="required">
+				<xs:annotation>
+					<xs:documentation>CompanyId, as supplied by vendor</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute type="xs:string" name="Version">
+				<xs:annotation>
+					<xs:documentation>Include text extended for a extended PARespons</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
